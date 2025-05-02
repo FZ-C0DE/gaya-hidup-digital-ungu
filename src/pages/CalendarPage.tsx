@@ -32,24 +32,25 @@ const CalendarPage = () => {
 
   const completedHabitsForSelectedDate = getCompletedHabitsForDate(selectedDate);
   
-  // Generate calendar day modifier to show dots on days with completed habits
-  const daysWithHabits: Record<string, { className: string; tooltip: string }> = {};
-  habits.forEach((habit) => {
-    Object.keys(habit.completed).forEach((dateStr) => {
-      const value = habit.completed[dateStr];
-      if (value === true || (typeof value === "number" && value > 0)) {
-        const date = new Date(dateStr);
-        const dateKey = date.toISOString().split("T")[0];
-        
-        if (!daysWithHabits[dateKey]) {
-          daysWithHabits[dateKey] = {
-            className: "relative bg-habit-purple/20 rounded-md",
-            tooltip: "Kebiasaan telah dicatat pada tanggal ini"
-          };
+  // Generate dates with habits to highlight in calendar
+  const getDaysWithHabits = () => {
+    const dates: Date[] = [];
+    
+    habits.forEach((habit) => {
+      Object.keys(habit.completed).forEach((dateStr) => {
+        const value = habit.completed[dateStr];
+        if (value === true || (typeof value === "number" && value > 0)) {
+          const date = new Date(dateStr);
+          // Add the date to the array if it's not already included
+          if (!dates.some(d => d.toISOString().split('T')[0] === date.toISOString().split('T')[0])) {
+            dates.push(date);
+          }
         }
-      }
+      });
     });
-  });
+    
+    return dates;
+  };
   
   // A function to format date strings to a more human-readable format
   const formatDateForDisplay = (dateStr: string) => {
@@ -79,7 +80,7 @@ const CalendarPage = () => {
                 onSelect={handleDateSelect}
                 className="rounded-md bg-habit-dark-card border border-white/10"
                 modifiers={{ 
-                  highlighted: daysWithHabits 
+                  highlighted: getDaysWithHabits()
                 }}
                 modifiersClassNames={{
                   highlighted: "relative bg-habit-purple/20 rounded-md",

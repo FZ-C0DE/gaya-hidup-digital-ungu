@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import AppLayout from "@/components/Layout/AppLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -36,7 +35,7 @@ const InsightsPage = () => {
     const videosHabit = habits.find(h => h.name === "Video Pembelajaran");
     if (videosHabit) {
       const videosCompleted = Object.values(videosHabit.completed).filter(
-        v => typeof v === "number" ? v > 0 : v
+        v => typeof v === "number" ? v > 0 : v === true
       ).length;
       
       updatedAchievements[1] = {

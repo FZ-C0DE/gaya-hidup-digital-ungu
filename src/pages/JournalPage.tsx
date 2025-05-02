@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import AppLayout from "@/components/Layout/AppLayout";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -11,7 +11,6 @@ import useLocalStorage from "@/hooks/useLocalStorage";
 import { JournalEntry } from "@/lib/types";
 import { getCurrentDate, formatDate } from "@/lib/data";
 import { useToast } from "@/components/ui/use-toast";
-import { v4 as uuidv4 } from 'uuid';
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 
 const JournalPage = () => {
