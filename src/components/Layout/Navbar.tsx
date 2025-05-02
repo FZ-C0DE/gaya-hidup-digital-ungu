@@ -1,7 +1,7 @@
 
 import { formatDate, getCurrentDate } from "@/lib/data";
 import { NavLink } from "react-router-dom";
-import { Home, Calendar, LineChart } from "lucide-react";
+import { Home, Calendar, LineChart, ListTodo } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -37,6 +37,17 @@ const Navbar = () => {
             >
               <Calendar className="h-5 w-5" />
               <span className="text-xs">Kalender</span>
+            </NavLink>
+            <NavLink 
+              to="/todos" 
+              className={({ isActive }) => 
+                `flex flex-col items-center gap-1 px-4 py-1 rounded-md transition-colors ${
+                  isActive ? 'text-habit-purple' : 'text-white/70 hover:text-habit-purple'
+                }`
+              }
+            >
+              <ListTodo className="h-5 w-5" />
+              <span className="text-xs">Tugas</span>
             </NavLink>
             <NavLink 
               to="/insights" 
