@@ -1,73 +1,93 @@
-# Welcome to your Lovable project
 
-## Project info
+# TechHabit Tracker
 
-**URL**: https://lovable.dev/projects/1002c307-5bf1-4a56-8328-fbcc400550ac
+## Tentang Aplikasi
 
-## How can I edit this code?
+TechHabit Tracker adalah aplikasi pelacak kebiasaan dan produktivitas yang dirancang untuk membantu pengguna membangun kebiasaan teknologi yang baik. Aplikasi ini berfokus pada kebiasaan-kebiasaan terkait teknologi, pengembangan diri, dan produktivitas.
 
-There are several ways of editing your application.
+## Fitur Utama
 
-**Use Lovable**
+- **Pelacak Kebiasaan**: Lacak kebiasaan harian dan mingguan Anda dengan mudah.
+- **Kalender**: Lihat kemajuan Anda dalam tampilan kalender yang interaktif.
+- **Tugas**: Kelola daftar tugas dengan prioritas yang berbeda.
+- **Wawasan**: Dapatkan analisis tentang kemajuan dan konsistensi Anda.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1002c307-5bf1-4a56-8328-fbcc400550ac) and start prompting.
+## Teknologi yang Digunakan
 
-Changes made via Lovable will be committed automatically to this repo.
+Aplikasi ini dibangun dengan menggunakan:
 
-**Use your preferred IDE**
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- react-router-dom
+- recharts (untuk visualisasi data)
+- uuid (untuk pengelolaan ID unik)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Cara Menjalankan Aplikasi
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Persyaratan
 
-Follow these steps:
+- Node.js versi terbaru
+- npm atau yarn
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Langkah-langkah
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+1. Clone repositori ini:
+   ```
+   git clone [URL_REPOSITORI]
+   ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Masuk ke direktori proyek:
+   ```
+   cd techhabit-tracker
+   ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+3. Install dependensi:
+   ```
+   npm install
+   ```
+
+4. Jalankan aplikasi dalam mode pengembangan:
+   ```
+   npm run dev
+   ```
+
+5. Buka aplikasi di browser:
+   ```
+   http://localhost:8080
+   ```
+
+## Cara Deploy ke Vercel
+
+1. Pastikan Anda memiliki akun di [Vercel](https://vercel.com)
+2. Hubungkan repositori GitHub Anda dengan Vercel
+3. Klik tombol "New Project" di dashboard Vercel
+4. Pilih repositori aplikasi ini
+5. Konfigurasi sudah otomatis disetel dengan file `vercel.json`
+6. Klik "Deploy"
+
+## Struktur Proyek
+
+```
+/src
+  /components       # Komponen-komponen React
+    /Layout         # Komponen tata letak (Navbar, AppLayout)
+    /ui             # Komponen UI yang dapat digunakan kembali
+  /lib              # Fungsi utilitas dan tipe data
+  /pages            # Halaman-halaman aplikasi
+  /hooks            # Custom React hooks
 ```
 
-**Edit a file directly in GitHub**
+## Pengembangan Selanjutnya
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- Implementasi sistem autentikasi
+- Sinkronisasi data dengan cloud
+- Notifikasi dan pengingat
+- Dukungan tema gelap/terang
+- Versi aplikasi mobile
 
-**Use GitHub Codespaces**
+## Lisensi
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1002c307-5bf1-4a56-8328-fbcc400550ac) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+MIT License
